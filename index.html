@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Te quiero</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --fg: #e2e8f0;
+      --accent: #f472b6;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background:
+        url("data:image/svg+xml;utf8,        <svg xmlns='http://www.w3.org/2000/svg' width='900' height='180'>          <rect width='100%' height='100%' fill='%230f172a'/>          <text x='10' y='30' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>I love you</text>          <text x='130' y='30' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Je t'aime</text>          <text x='250' y='30' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Ti amo</text>          <text x='350' y='30' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Ich liebe dich</text>          <text x='520' y='30' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Te amo</text>          <text x='630' y='30' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>愛してる</text>          <text x='750' y='30' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>사랑해</text>          <text x='10' y='70' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Я люблю тебя</text>          <text x='180' y='70' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>أحبك</text>          <text x='260' y='70' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Σ'αγαπώ</text>          <text x='380' y='70' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Ik hou van jou</text>          <text x='550' y='70' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>我愛你</text>          <text x='650' y='70' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Kocham Cię</text>          <text x='10' y='110' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Jag älskar dig</text>          <text x='170' y='110' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Eu te amo</text>          <text x='300' y='110' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Volim te</text>          <text x='420' y='110' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Seni seviyorum</text>          <text x='590' y='110' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>אני אוהב אותך</text>          <text x='10' y='150' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Ég elska þig</text>          <text x='150' y='150' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Miluji tě</text>          <text x='270' y='150' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Te iubesc</text>          <text x='390' y='150' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Rakastan sinua</text>          <text x='560' y='150' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Szeretlek</text>          <text x='690' y='150' font-family='Segoe UI, Roboto, Arial' font-size='22' fill='%23e2e8f0' opacity='0.12'>Te quiero</text>        </svg>") repeat;
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      display: grid;
+      place-items: center;
+    }
+
+    .card {
+      backdrop-filter: blur(6px);
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(226, 232, 240, 0.15);
+      border-radius: 16px;
+      padding: 32px 40px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      max-width: 720px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.1;
+      color: var(--fg);
+    }
+
+    p {
+      margin: 0;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: #cbd5e1;
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(244, 114, 182, 0.4);
+      color: var(--fg);
+      background: linear-gradient(135deg, rgba(244,114,182,0.25), rgba(99,102,241,0.25));
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    }
+
+    .heart-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(15, 23, 42, 0.95);
+      border: 2px solid var(--accent);
+      border-radius: 20px;
+      padding: 40px 50px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 20px 60px rgba(244, 114, 182, 0.4);
+      animation: popIn 0.4s ease forwards;
+      max-width: 90%;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes heartBeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.3);
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1.2);
+      }
+    }
+
+    .heart-icon {
+      font-size: 80px;
+      color: var(--accent);
+      animation: heartBeat 1.5s ease-in-out infinite;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .heart-message {
+      font-size: 28px;
+      color: var(--fg);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .heart-language {
+      font-size: 18px;
+      color: #cbd5e1;
+      font-style: italic;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      opacity: 0;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .close-btn {
+      margin-top: 25px;
+      padding: 10px 25px;
+      background: linear-gradient(135deg, rgba(244,114,182,0.3), rgba(99,102,241,0.3));
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      color: var(--fg);
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .close-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, rgba(244,114,182,0.5), rgba(99,102,241,0.5));
+    }
+
+    .romantic-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0) rotate(0deg);
+      background: linear-gradient(135deg, rgba(139, 69, 19, 0.95), rgba(15, 23, 42, 0.95));
+      border: 3px solid var(--accent);
+      border-radius: 25px;
+      padding: 50px 60px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 25px 70px rgba(244, 114, 182, 0.6), 0 0 100px rgba(244, 114, 182, 0.3);
+      animation: romanticPopIn 0.6s ease forwards;
+      max-width: 85%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    @keyframes romanticPopIn {
+      0% {
+        transform: translate(-50%, -50%) scale(0) rotate(-15deg);
+        opacity: 0;
+      }
+      60% {
+        transform: translate(-50%, -50%) scale(1.15) rotate(5deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.7;
+        transform: scale(1.5);
+      }
+    }
+
+    .romantic-header {
+      font-size: 32px;
+      color: var(--accent);
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-shadow: 0 0 20px rgba(244, 114, 182, 0.5);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .romantic-number {
+      display: inline-block;
+      font-size: 48px;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 20px;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    .romantic-text {
+      font-size: 24px;
+      color: var(--fg);
+      line-height: 1.6;
+      margin: 25px 0;
+      font-style: italic;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .sparkles {
+      position: absolute;
+      font-size: 20px;
+      animation: sparkle 1.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .sparkles:nth-child(1) {
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .sparkles:nth-child(2) {
+      top: 20%;
+      right: 15%;
+      animation-delay: 0.5s;
+    }
+
+    .sparkles:nth-child(3) {
+      bottom: 15%;
+      left: 15%;
+      animation-delay: 1s;
+    }
+
+    .sparkles:nth-child(4) {
+      bottom: 20%;
+      right: 10%;
+      animation-delay: 1.5s;
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+  <script>
+    // Array de 100+ cosas que me gustan de ti
+    const cienCosas = [
+      "1. Me gusta verte sonreír",
+      "2. Tus lindos ojos color café",
+      "3. Cuando compramos un Efelante",
+      "4. Me gusta cuando te pones caprichosa",
+      "5. Me gusta lo consentida que eres",
+      "6. Cuando vamos por un pedacito de torta",
+      "7. Me gusta cuando dices aja aja aja",
+      "8. Me gusta cuando dices valórenme valórenme",
+      "9. Me gusta tu sencilles",
+      "10. Me gustan mucho tus abrazos",
+      "11. Me gustan muchos tus besos",
+      "12. Me gusta mucho que siempre estar feliz",
+      "13. Me gusta la confianza que me tienes",
+      "14. Me gusta como siempre resuelves lo que sea",
+      "15. Me gusta cuando me haces bullyng borracho",
+      "16. Me gustan tus audios",
+      "17. Me gusta charlar contigo",
+      "18. Me gusta cómo me quieres",
+      "19. Me gusta cuando te pedí que fueras mi novia",
+      "20. Me gusta estar cerquita de ti y decirte te quiero",
+      "21. Me gusta tener mi galería llena de fotos tuyas",
+      "22. Me gusta el corazón tan valioso que tienes",
+      "23. Me gusta la gran mama que eres",
+      "24. Me gusta lo linda que eres físicamente",
+      "25. Me gusta cuando quieres que te consienta",
+      "26. Me gusta estar siempre que lo necesites",
+      "27. Me gusta lo terca que eres",
+      "28. Me gusta ir contigo de la mano",
+      "29. Me gusto nuestro primer beso frente al árbol",
+      "30. Me gusta congelar el tiempo cuando estoy contigo",
+      "31. Me gusta tu ternura",
+      "32. Me gusta tenerte en mi mente todo el día",
+      "33. Me gusta cuando me dices como te sientes",
+      "34. Me gusta lo mucho que te ama tu familia",
+      "35. Me gusta tu nobleza",
+      "36. Sabias que eres perfecta para mi",
+      "37. Te extraño no importa cuando leas esto",
+      "38. Te quiero mucho no importa cuando leas esto",
+      "39. Vamos a un restaurante pinchado",
+      "40. Me gusta oler a ti y tu aroma",
+      "41. Me gusta cuando me cuentas tu dia a dia",
+      "42. Me gusta tu sinceridad",
+      "43. Me gusta que me haces ser mejor persona y no solo a mi",
+      "44. Me gustan tus tatuajes, sobre todo la mándala",
+      "45. Me gusta verte compartir con tus hijas",
+      "46. Me gusta que seas mi novia",
+      "47. Me gusta lo cariñosa que eres conmigo",
+      "48. Me gusta que me busques en momento difíciles",
+      "49. Me gusta tu apoyo incondicional",
+      "50. Me gusta que valores hasta la más mínima cosa o detalle",
+      "51. Me gusta cada vez que nos vemos",
+      "52. Me gusta que eres todo lo que no sabía que quería",
+      "53. Me gusta que peleemos por quien paga",
+      "54. Me gustaria ir la cena familiar con la camisa de 'soy tuyo'",
+      "55. Me gusta que tengas la capacidad de hacer reír a cualquier persona",
+      "56. Me gusta tu gusto y trato por los animales",
+      "57. Quieres chocholates, avísame y ya te llevo",
+      "58. Me gusta cuando me dices que soy tu churrito",
+      "59. Me gusta caminar junto a ti. Avísame y vamos",
+      "60. Me gusta la seguridad que me trasmites",
+      "61. Me gusta que sueñes conmigo",
+      "62. Me gusta lo trabajadora que eres",
+      "63. Me gusta como cantas",
+      "64. Me gusta que siempre para mi te ves hermosa",
+      "65. Me gustó mucho coincidir contigo",
+      "66. El miércoles tenemos una cita así que acuérdame",
+      "67. Recuerda que siempre los ángeles te cuidan y yo también",
+      "68. Me gusta como nos queremos",
+      "69. Me gusta que te preocupas por mi",
+      "70. Me gusta ser parte de tu vida",
+      "71. Me gusta soñar contigo y como te ves vestida de blanco y con alas (angelito)",
+      "72. Me gusta como el destino nos unió",
+      "73. Vamos por una hamburguesita",
+      "74. Me gusta mucho protegerte del chuchi",
+      "75. Me gusta que te pongas mis sacos amor",
+      "76. Me gusta que me cuentes tus secretos",
+      "77. Me gusta cuando te acuerdas de mi en cualquier instante",
+      "78. Me gustan tus medias de pollo, por fa salgamos y te las pones",
+      "79. Me gusta cuando me dices que soy solo tuyo",
+      "80. Me gusta mucho cuando escribes cosas profundas",
+      "81. 'sí lo vende un policías es legal' by carolina",
+      "82. 'eso la casa no se cae' by carolina",
+      "83. Me gustan tus pompis",
+      "84. Me gusta que eres muy fuerte mentalmente",
+      "85. Me gusta lo inteligente que eres",
+      "86. Me gusta que siempre hayas sido tu misma",
+      "87. ¡¡Amor escríbeme ya!!, que te necesito decir algo (muestra esta tarjeta)",
+      "88. Me gusta tu corazón de pollito de colores",
+      "89. Me gusta que eres única",
+      "90. Me gusta tu argumento de la mujer es la que manda",
+      "91. Me gusta saber que hago parte de tu futuro",
+      "92. Me gusta que pidas tres deseos en las catedrales",
+      "93. Me gusta todos los planes que tenemos por hacer",
+      "94. Me gusta mucho cuando me hablas consentido me mata",
+      "95. Me Gusta saber que estas bien",
+      "96. Me gusta saber que te hago feliz",
+      "97. Me gusta cuando me tomas de la boca y me besas",
+      "98. Me gusta como lo que siento por ti crece día a día",
+      "99. Me gustan todas las cosas que me acuerdan de ti ejm: cafe",
+      "100. Me gusta hacer arrunchis contigo por fa cuadrmos uno pronto",
+      "101. Me gusta tomarme un café contigo así que vamos",
+      "102. Me gusta cuando me dices chuchui",
+      "103. Me gusta hacerte cosquillas",
+      "104. Me gusta que hables como lorito parlanchin",
+      "105. Me gusta hacer fila contigo",
+      "106. Vámonos de viaje, Márcame y lo cuadramos",
+      "107. Me gusta que te convertiste en mi lugar favorito"
+    ];
+
+    const teQuieroIdiomas = [
+      { idioma: 'Español', mensaje: 'Te quiero' },
+      { idioma: 'Inglés', mensaje: 'I love you' },
+      { idioma: 'Francés', mensaje: 'Je t\'aime' },
+      { idioma: 'Italiano', mensaje: 'Ti amo' },
+      { idioma: 'Alemán', mensaje: 'Ich liebe dich' },
+      { idioma: 'Portugués', mensaje: 'Eu te amo' },
+      { idioma: 'Japonés', mensaje: '愛してる (Aishiteru)' },
+      { idioma: 'Coreano', mensaje: '사랑해 (Saranghae)' },
+      { idioma: 'Ruso', mensaje: 'Я люблю тебя (Ya lyublyu tebya)' },
+      { idioma: 'Árabe', mensaje: 'أحبك (Uhibbuka)' },
+      { idioma: 'Griego', mensaje: 'Σ\'αγαπώ (S\'agapo)' },
+      { idioma: 'Holandés', mensaje: 'Ik hou van jou' },
+      { idioma: 'Chino', mensaje: '我愛你 (Wǒ ài nǐ)' },
+      { idioma: 'Polaco', mensaje: 'Kocham Cię' },
+      { idioma: 'Sueco', mensaje: 'Jag älskar dig' },
+      { idioma: 'Croata', mensaje: 'Volim te' },
+      { idioma: 'Turco', mensaje: 'Seni seviyorum' },
+      { idioma: 'Hebreo', mensaje: 'אני אוהב אותך (Ani ohev otach)' },
+      { idioma: 'Islandés', mensaje: 'Ég elska þig' },
+      { idioma: 'Checo', mensaje: 'Miluji tě' },
+      { idioma: 'Rumano', mensaje: 'Te iubesc' },
+      { idioma: 'Finlandés', mensaje: 'Rakastan sinua' },
+      { idioma: 'Húngaro', mensaje: 'Szeretlek' },
+      { idioma: 'Catalán', mensaje: 'T\'estimo' },
+      { idioma: 'Noruego', mensaje: 'Jeg elsker deg' },
+      { idioma: 'Danés', mensaje: 'Jeg elsker dig' },
+      { idioma: 'Hindi', mensaje: 'मैं तुमसे प्यार करता हूँ (Main tumse pyaar karta hoon)' },
+      { idioma: 'Tailandés', mensaje: 'ฉันรักคุณ (Chan rak khun)' },
+      { idioma: 'Vietnamita', mensaje: 'Anh yêu em' },
+      { idioma: 'Indonesio', mensaje: 'Aku cinta kamu' },
+      { idioma: 'Malayo', mensaje: 'Saya sayang awak' },
+      { idioma: 'Filipino', mensaje: 'Mahal kita' },
+      { idioma: 'Ucraniano', mensaje: 'Я тебе кохаю (Ya tebe kokhayu)' },
+      { idioma: 'Búlgaro', mensaje: 'Обичам те (Obicham te)' },
+      { idioma: 'Serbio', mensaje: 'Волим те (Volim te)' },
+      { idioma: 'Eslovaco', mensaje: 'Ľúbim ťa' },
+      { idioma: 'Esloveno', mensaje: 'Ljubim te' },
+      { idioma: 'Lituano', mensaje: 'Aš tave myliu' },
+      { idioma: 'Letón', mensaje: 'Es tevi mīlu' },
+      { idioma: 'Estonio', mensaje: 'Ma armastan sind' },
+      { idioma: 'Irlandés', mensaje: 'Tá grá agam duit' },
+      { idioma: 'Galés', mensaje: 'Rwy\'n dy garu di' },
+      { idioma: 'Escocés', mensaje: 'Tha gaol agam ort' },
+      { idioma: 'Swahili', mensaje: 'Nakupenda' },
+      { idioma: 'Zulú', mensaje: 'Ngiyakuthanda' },
+      { idioma: 'Afrikáans', mensaje: 'Ek het jou lief' },
+      { idioma: 'Persa', mensaje: 'دوستت دارم (Dooset daram)' },
+      { idioma: 'Urdu', mensaje: 'میں تم سے محبت کرتا ہوں (Main tumse mohabbat karta hoon)' },
+      { idioma: 'Bengali', mensaje: 'আমি তোমায় ভালোবাসি (Ami tomay bhalobashi)' },
+      { idioma: 'Tamil', mensaje: 'நான் உன்னை காதலிக்கிறேன் (Naan unnai kadhalikirean)' }
+    ];
+
+    function mostrarTeQuiero() {
+      const indiceAleatorio = Math.floor(Math.random() * teQuieroIdiomas.length);
+      const seleccion = teQuieroIdiomas[indiceAleatorio];
+
+      // Crear overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'overlay';
+
+      // Crear popup del corazón
+      const popup = document.createElement('div');
+      popup.className = 'heart-popup';
+      popup.innerHTML = `
+        <span class="heart-icon">❤️</span>
+        <div class="heart-message">${seleccion.mensaje}</div>
+        <div class="heart-language">(${seleccion.idioma})</div>
+        <button class="close-btn">Cerrar</button>
+      `;
+
+      document.body.appendChild(overlay);
+      document.body.appendChild(popup);
+
+      // Agregar event listeners
+      const closeBtn = popup.querySelector('.close-btn');
+      closeBtn.addEventListener('click', cerrarCorazon);
+      overlay.addEventListener('click', cerrarCorazon);
+    }
+
+    function cerrarCorazon() {
+      const overlay = document.querySelector('.overlay');
+      const popup = document.querySelector('.heart-popup');
+      if (overlay) overlay.remove();
+      if (popup) popup.remove();
+    }
+
+    function mostrar100Cosas() {
+      const indiceAleatorio = Math.floor(Math.random() * cienCosas.length);
+      const frase = cienCosas[indiceAleatorio];
+
+      // Crear overlay
+      const overlay = document.createElement('div');
+      overlay.className = 'overlay';
+
+      // Crear popup romántico
+      const popup = document.createElement('div');
+      popup.className = 'romantic-popup';
+      popup.innerHTML = `
+        <span class="sparkles">✨</span>
+        <span class="sparkles">💫</span>
+        <span class="sparkles">⭐</span>
+        <span class="sparkles">✨</span>
+        <div class="romantic-header">100 cosas que me gustan de ti</div>
+        <div class="romantic-text">${frase}</div>
+        <button class="close-btn">Cerrar</button>
+      `;
+
+      document.body.appendChild(overlay);
+      document.body.appendChild(popup);
+
+      // Agregar event listeners
+      const closeBtn = popup.querySelector('.close-btn');
+      closeBtn.addEventListener('click', cerrarRomantico);
+      overlay.addEventListener('click', cerrarRomantico);
+    }
+
+    function cerrarRomantico() {
+      const overlay = document.querySelector('.overlay');
+      const popup = document.querySelector('.romantic-popup');
+      if (overlay) overlay.remove();
+      if (popup) popup.remove();
+    }
+
+    // Inicializar event listeners
+    function inicializar() {
+      const botones = document.querySelectorAll('.btn');
+
+      if (botones.length >= 2) {
+        // Primer botón - Te quiero en idiomas
+        botones[0].addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          mostrarTeQuiero();
+          return false;
+        });
+
+        // Segundo botón - 100 cosas
+        botones[1].addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          mostrar100Cosas();
+          return false;
+        });
+      }
+    }
+
+    // Intentar inicializar de múltiples formas para compatibilidad
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', inicializar);
+    } else {
+      inicializar();
+    }
+
+    // Backup: también ejecutar después de que todo cargue
+    window.addEventListener('load', inicializar);
+  </script>
+</head>
+<body>
+  <main class="card">
+    <h1><span class="accent">Te quiero</span>, hoy y siempre</h1>
+    <p>Este mensaje está escrito en el fondo y también aquí, bien clarito.</p>
+    <div class="btn-container">
+      <a class="btn" href="javascript:void(0);">Dímelo otra vez</a>
+      <a class="btn" href="javascript:void(0);">100 cosas que me gustan de ti</a>
+    </div>
+  </main>
+</body>
+</html>
